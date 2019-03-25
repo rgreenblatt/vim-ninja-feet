@@ -79,6 +79,8 @@ if !exists('g:ninja_feet_no_mappings')
 
 	call s:map('z[', "<Plug>(ninja-insert)", 'n')
 	call s:map('z]', "<Plug>(ninja-append)", 'n')
-	call s:map('g[', "<Plug>(ninja-begin)", 'n')
-	call s:map('g]', "<Plug>(ninja-end)", 'n')
+	call s:map('[i', "<Plug>(ninja-begin)i", 'n')
+	call s:map(']i', "<Plug>(ninja-end)i", 'n')
+	call s:map('[a', "<Plug>(ninja-begin)a", 'n')
+	call s:map(']a', "<Plug>(ninja-end)a", 'n')
 endif
