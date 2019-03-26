@@ -33,8 +33,7 @@ function! s:ninja_insert(mode)
 endfunction
 
 function! s:ninja_begin(mode)
-	let op = 'jk'
-	call feedkeys('`['.op, 'n')
+	call feedkeys('`[', 'n')
 endfunction
 
 function! s:ninja_append(mode)
@@ -43,8 +42,7 @@ function! s:ninja_append(mode)
 endfunction
 
 function! s:ninja_end(mode)
-	let op = 'kj'
-	call feedkeys('`]'.op, 'n')
+	call feedkeys('`]', 'n')
 endfunction
 
 function! s:map_expr(sid, type, direction, count)
