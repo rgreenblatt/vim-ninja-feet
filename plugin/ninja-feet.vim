@@ -61,24 +61,43 @@ endfunction
 
 onoremap <silent> <expr> <Plug>(ninja-left-foot-inner)  <SID>map_expr("<SID>", 'i', '[', v:count1)
 onoremap <silent> <expr> <Plug>(ninja-left-foot-a)      <SID>map_expr("<SID>", 'a', '[', v:count1)
+onoremap <silent> <expr> <Plug>(ninja-left-foot-Inner)  <SID>map_expr("<SID>", 'I', '[', v:count1)
+onoremap <silent> <expr> <Plug>(ninja-left-foot-A)      <SID>map_expr("<SID>", 'A', '[', v:count1)
+onoremap <silent> <expr> <Plug>(ninja-left-foot-gc)     <SID>map_expr("<SID>", 'g', '[', v:count1)c
 onoremap <silent> <expr> <Plug>(ninja-right-foot-inner) <SID>map_expr("<SID>", 'i', ']', v:count1)
 onoremap <silent> <expr> <Plug>(ninja-right-foot-a)     <SID>map_expr("<SID>", 'a', ']', v:count1)
+onoremap <silent> <expr> <Plug>(ninja-right-foot-Inner) <SID>map_expr("<SID>", 'I', ']', v:count1)
+onoremap <silent> <expr> <Plug>(ninja-right-foot-A)     <SID>map_expr("<SID>", 'A', ']', v:count1)
+onoremap <silent> <expr> <Plug>(ninja-right-foot-gc)    <SID>map_expr("<SID>", 'g', ']', v:count1)c
 
 nnoremap <silent> <Plug>(ninja-insert) :<C-U>set operatorfunc=<SID>ninja_insert<CR>g@
 nnoremap <silent> <Plug>(ninja-append) :<C-U>set operatorfunc=<SID>ninja_append<CR>g@
-nnoremap <silent> <Plug>(ninja-begin) :<C-U>set operatorfunc=<SID>ninja_begin<CR>g@
-nnoremap <silent> <Plug>(ninja-end) :<C-U>set operatorfunc=<SID>ninja_end<CR>g@
+nnoremap <silent> <Plug>(ninja-begin)  :<C-U>set operatorfunc=<SID>ninja_begin<CR>g@
+nnoremap <silent> <Plug>(ninja-end)    :<C-U>set operatorfunc=<SID>ninja_end<CR>g@
 
 if !exists('g:ninja_feet_no_mappings')
-	call s:map('[i', "<Plug>(ninja-left-foot-inner)", 'o')
-	call s:map('[a', "<Plug>(ninja-left-foot-a)", 'o')
-	call s:map(']i', "<Plug>(ninja-right-foot-inner)", 'o')
-	call s:map(']a', "<Plug>(ninja-right-foot-a)", 'o')
+	call s:map('[i',  "<Plug>(ninja-left-foot-inner)",  'o')
+	call s:map('[a',  "<Plug>(ninja-left-foot-a)",      'o')
+	call s:map('[I',  "<Plug>(ninja-left-foot-Inner)",  'o')
+	call s:map('[A',  "<Plug>(ninja-left-foot-A)",      'o')
+	call s:map('[gc', "<Plug>(ninja-left-foot-gc)",     'o')
+	call s:map(']i',  "<Plug>(ninja-right-foot-inner)", 'o')
+	call s:map(']a',  "<Plug>(ninja-right-foot-a)",     'o')
+	call s:map(']I',  "<Plug>(ninja-right-foot-Inner)", 'o')
+	call s:map(']A',  "<Plug>(ninja-right-foot-A)",     'o')
+	call s:map(']gc', "<Plug>(ninja-right-foot-gc)",    'o')
 
-	call s:map('z[', "<Plug>(ninja-insert)", 'n')
-	call s:map('z]', "<Plug>(ninja-append)", 'n')
-	call s:map('[i', "<Plug>(ninja-begin)i", 'n')
-	call s:map(']i', "<Plug>(ninja-end)i", 'n')
-	call s:map('[a', "<Plug>(ninja-begin)a", 'n')
-	call s:map(']a', "<Plug>(ninja-end)a", 'n')
+	call s:map('z[',  "<Plug>(ninja-insert)",  'n')
+	call s:map('z]',  "<Plug>(ninja-append)",  'n')
+
+	call s:map('[i',  "<Plug>(ninja-begin)i",  'n')
+	call s:map('[a',  "<Plug>(ninja-begin)a",  'n')
+	call s:map('[I',  "<Plug>(ninja-begin)I",  'n')
+	call s:map('[A',  "<Plug>(ninja-begin)A",  'n')
+	call s:map('[gc', "<Plug>(ninja-begin)gc", 'n')
+	call s:map(']i',  "<Plug>(ninja-end)i",    'n')
+	call s:map(']a',  "<Plug>(ninja-end)a",    'n')
+	call s:map(']I',  "<Plug>(ninja-end)I",    'n')
+	call s:map(']A',  "<Plug>(ninja-end)A",    'n')
+	call s:map(']gc', "<Plug>(ninja-end)gc",   'n')
 endif
